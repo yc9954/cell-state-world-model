@@ -32,9 +32,10 @@ part of the contribution.**
   <img src="results/figures/unified_worldmodel_demo.png" width="90%">
 </p>
 
-## 🔴 Live public demo
+## Sample endpoints
 
-Try the model in your browser — no install required:
+A public Modal deployment exposes sample endpoints you can call directly — a
+reference deployment for trying the model, not the final demo.
 
 ### **https://alexlee--cell-world-model-demo-web.modal.run**
 
