@@ -50,6 +50,21 @@ To redeploy your own instance: `modal deploy serve_app.py`.
 
 ---
 
+## Interactive workbench (`workbench/`)
+
+A React front-end plus a small local harness proxy. You describe a cell state in
+plain language → **Claude turns it into a plan** → the trained model **generates the
+cell's morphology from the learned state S** on a GPU. You can then walk the state,
+**intervene** on it mid-trajectory, and **annotate** the generated image — asking
+Claude questions that it answers grounded in that cell's actual numbers.
+
+The proxy exists so the Claude API key never reaches the browser (and it removes the
+cross-origin problem by relaying to the model server-side). See
+[`workbench/README.md`](workbench/README.md) for the architecture, how to run it, and
+the honest notes on what the scrubber does and does not mean.
+
+---
+
 ## Headline result
 
 On **200,000 cells** from a 10x Xenium human colon-cancer sample, a shared encoder
@@ -96,9 +111,13 @@ cell-state-world-model/
 │   ├── unified_time_axis.json    # time-transfer stats
 │   ├── unified_eval.json         # held-out evaluation
 │   └── figures/                  # the report figures (all English)
-└── docs/
-    ├── worldmodel_final_report.md      # comprehensive technical write-up
-    └── unified_model_architecture.md   # architecture design notes
+├── docs/
+│   ├── worldmodel_final_report.md      # comprehensive technical write-up
+│   └── unified_model_architecture.md   # architecture design notes
+└── workbench/                    # interactive demo — UI + harness (see its README)
+    ├── src/                      #   React app: state → generated cell → walk → intervene
+    ├── server/proxy.mjs          #   local proxy: holds the Claude key, relays to the model
+    └── README.md                 #   architecture, how to run, honest notes
 ```
 
 ---

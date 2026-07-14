@@ -1,0 +1,122 @@
+/* Clinical / bioinformatics workbench theme — neutral slate, cold blue accent,
+   hard 1px borders, dense. No warm tones, no rounded chat aesthetic. */
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="light"] {
+  --bg: #e7ebef;
+  --surface: #ffffff;
+  --surface-2: #f2f5f8;
+  --border: #ccd4dc;
+  --border-faint: #e1e7ec;
+  --text: #16202b;
+  --muted: #5c6b7a;
+  --accent: #0b6bcb;
+  --accent-fg: #ffffff;
+  --link: #0b6bcb;
+  --warn: #9a6700;
+  --ok: #1a7f37;
+  --error: #b42318;
+  --series-1: #1f6feb;
+  --series-2: #1a7f5a;
+  --series-3: #b8860b;
+  --series-4: #2f7d32;
+  --series-5: #6a3fb5;
+  --series-6: #c0392b;
+  --grid: #e1e7ec;
+  --axis: #b7c0c9;
+}
+
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-2: #1c2128;
+  --border: #30363d;
+  --border-faint: #22272e;
+  --text: #d8dee4;
+  --muted: #8b949e;
+  --accent: #388bfd;
+  --accent-fg: #0d1117;
+  --link: #4c9eff;
+  --warn: #d29922;
+  --ok: #3fb950;
+  --error: #f85149;
+  --series-1: #58a6ff;
+  --series-2: #3fb950;
+  --series-3: #d29922;
+  --series-4: #56d364;
+  --series-5: #a371f7;
+  --series-6: #f85149;
+  --grid: #21262d;
+  --axis: #484f58;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in { animation: fade-in 120ms ease-out backwards; }
+
+/* Technical square-ish slider. */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: var(--border);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 1px;
+  background: var(--accent);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 1px;
+  background: var(--accent);
+  border: 0;
+  cursor: pointer;
+}

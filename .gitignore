@@ -4,3 +4,7 @@ __pycache__/
 *.npz
 *.npy
 .DS_Store
+node_modules/
+dist/
+.env
+.env.local
