@@ -10,7 +10,15 @@ swift scripts/compose_readme_overview.swift
 
 The compositor verifies every RGB pixel in the saved scientific panels against the original.
 
-## Image model prompt
+## Final correction prompt
+
+The final revision restores both original heading sentences and reduces the title to the original figure's typographic scale using the built-in image generation tool.
+
+```text
+Edit this scientific diagram header, making a precise typography correction. Keep the entire diagram (four input boxes, State S box, five output boxes, all arrows, all labels, numerical values, colors) unchanged. Keep wide 3:1 aspect ratio and white background. Replace ONLY the top title/subtitle area. The current title is MUCH too large. Set the main title to a small restrained bold sans-serif size, approximately 30 pixels on a 2172-pixel-wide image (less than HALF current title size), centered at y=40. Main title exact text on ONE line: "Unified Cell-State World Model — one state S fuses expression · space · morphology · time". Restore the missing explanatory sentence on its own centered line at y=135, approximately 26 pixels semibold: "One shared state S predicts all four axes — a single trained network". This sentence MUST appear in full with no omission or paraphrase. Do NOT use current subtitle "One shared state S • expression · space · morphology · time". The two text lines must be modest scientific figure headings, not a poster headline. Keep clear white space between explanatory sentence and diagram. Diagram starts around y=235, below both text lines. No text overlaps, clipping or large title. Preserve every diagram label exactly including R², ρ, +0.30 and all metrics.
+```
+
+## Initial image model prompt (superseded typography)
 
 ```text
 Use case: precise-object-edit / scientific infographic.
