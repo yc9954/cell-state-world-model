@@ -17,7 +17,7 @@
 <h3 align="center"><a href="#getting-started"><ins>Getting started</ins></a> · <a href="report/unified_paper_full.pdf">Read the technical report (PDF)</a></h3>
 
 <p align="center">
-  <img src="results/figures/unified_worldmodel_demo.png" alt="Overview: expression, spatial GNN, morphology and an EMT time transfer feed one 128-d state S, which predicts all four axes; real versus generated cell morphology; the EMT trajectory in S; and the four-axis metrics against shuffle" width="960" />
+  <img src="results/figures/readme_worldmodel_overview.png" alt="Overview: expression, spatial GNN, morphology and an EMT time transfer feed one 128-d state S, which predicts all four axes; real versus generated cell morphology; the EMT trajectory in S; and the four-axis metrics against shuffle" width="960" />
 </p>
 
 **Author:** Yuchan Lee · **Event:** Built with Claude — Life Sciences Hackathon (Researcher Track), built end-to-end during the event with Claude Science.
